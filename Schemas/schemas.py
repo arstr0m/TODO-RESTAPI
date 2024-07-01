@@ -33,11 +33,14 @@ class CreateUser(UserBase):
 
 
 class DeleteUser(UserBase):
+    status: Optional[str] = "ACT"
+
     class Config:
         from_attributes = True
 
 
 class UpdateEmail(UserBase):
+    status: Optional[str] = "ACT"
     email: str
 
     class Config:
@@ -45,6 +48,8 @@ class UpdateEmail(UserBase):
 
 
 class UpdateUser(UserBase):
+    status: Optional[str] = "ACT"
+
     class Config:
         from_attributes = True
 
@@ -57,6 +62,11 @@ class IconsBase(BaseModel):
 
     class Config:
         from_attributes = True
+
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
 
 
 class TaskBase(BaseModel):

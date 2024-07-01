@@ -1,6 +1,8 @@
 fastapi~=0.111.0
 sqlalchemy~=2.0.31
 psycopg2
-
+passlib[bcrypt]
 pydantic~=2.7.4
+pyjwt
 starlette~=0.37.2
+python-jose[cryptography]
